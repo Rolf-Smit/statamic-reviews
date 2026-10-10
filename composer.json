@@ -1,5 +1,14 @@
 {
     "name": "letsdeploy/statamic-reviews",
+    "description": "Google reviews for Statamic",
+    "type": "statamic-addon",
+    "authors": [
+        {
+            "name": "letsdeploy",
+            "email": "sem@letsdeploy.nl",
+            "homepage": "https://letsdeploy.nl"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Letsdeploy\\Reviews\\": "src"
@@ -23,8 +32,10 @@
     },
     "extra": {
         "statamic": {
-            "name": "Reviews for Statamic",
-            "description": "Integrate Google Reviews into your Statamic site with Apify."
+            "name": "Google Reviews",
+            "description": "Google reviews for Statamic",
+            "developer": "letsdeploy",
+            "developer-url": "https://letsdeploy.nl"
         },
         "laravel": {
             "providers": [
