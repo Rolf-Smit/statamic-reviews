@@ -1,23 +1,29 @@
-# Reviews
+# Google Reviews
 
-> Reviews is a Statamic addon that does something pretty neat.
+> Google reviews for Statamic.
 
-## Features
+Syncs your Google reviews (via [Apify](https://apify.com)) into a `reviews` collection and keeps a `review` global with the average score and review count up to date.
 
-This addon does:
-
-- This
-- And this
-- And even this
+This addon only handles the data. The frontend (review cards, masonry, summary) lives in [`letsdeploy/statamic-basecamp`](https://github.com/letsdeploy-nl/statamic-basecamp) as the `reviews` section and the `social_proof` component.
 
 ## How to Install
 
-You can install this addon via Composer:
-
 ``` bash
-composer require letsdeploy/reviews
+composer require letsdeploy/statamic-reviews
+php artisan vendor:publish --tag=ldp-reviews-collections
+php artisan vendor:publish --tag=ldp-reviews-globals
+```
+
+Add to your `.env`:
+
+```
+APIFY_TOKEN=
+GOOGLE_PLACE_IDS=        # comma separated
+GOOGLE_MAX_REVIEWS=1000
 ```
 
 ## How to Use
 
-Here's where you can explain how to use this wonderful addon.
+``` bash
+php please reviews:sync
+```
